@@ -12,10 +12,14 @@ dotenv.config();
 
 app.use(bodyParser.json( {limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded( {limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors( {
+    origin: ["https://memories-app-api.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 
-app.get("/", (req, res) => {
-    res.json("hello to Memories API");
+app.get('/', (req, res) => {
+    res.send("hello to Memories API");
 });
 
 app.use('/posts', postRouter);
