@@ -12,11 +12,11 @@ dotenv.config();
 
 app.use(bodyParser.json( {limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded( {limit: "30mb", extended: true }));
-app.use(cors( {
-    origin: ["https://memories-app-api.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send("hello to Memories API");
+}); 
 
 app.use('/posts', postRouter);
 const PORT = process.env.PORT || 5000;
@@ -30,6 +30,4 @@ mongoose.connect(process.env.CONNECTION_URL, {
 .catch((error)=> console.log(error.message));
 
 mongoose.connect(process.env.CONNECTION_URL,{ useFindAndModify: false});
-
-
  
