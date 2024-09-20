@@ -18,12 +18,15 @@ app.use(cors( {
     credentials: true
 }));
 
-app.get('/', (req, res) => {
-    res.send("hello to Memories API");
-});
+
 
 app.use('/posts', postRouter);
 const PORT = process.env.PORT || 5000;
+
+app.get('/', (req, res) => {
+    res.send("hello to Memories API");
+}); 
+
 
 mongoose.connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
