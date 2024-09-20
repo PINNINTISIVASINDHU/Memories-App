@@ -31,6 +31,5 @@ mongoose.connect(process.env.CONNECTION_URL, {
 
 mongoose.connect(process.env.CONNECTION_URL,{ useFindAndModify: false});
 
-app.get('/', (req, res) => {
-    res.send("hello to Memories API");
-}); 
+
+ 
