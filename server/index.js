@@ -21,12 +21,10 @@ app.get('/', (req, res) => {
 app.use('/posts', postRouter);
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.CONNECTION_URL, {
-    useNewUrlParser: true
-}).then(()=> app.listen(PORT, ()=>
+const url = process.env.CONNECTION_URL;
+
+mongoose.connect(url).then(()=> app.listen(PORT, ()=>
     console.log(`server running on port: ${PORT}`)
 ))
 .catch((error)=> console.log(error.message));
-
-mongoose.connect(process.env.CONNECTION_URL,{ useFindAndModify: false});
  
