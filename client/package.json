@@ -4,12 +4,16 @@
   "private": true,
   "proxy": "https://memories-server-app.vercel.app",
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^6.0.2",
+    "@mui/material": "^6.1.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^18.3.8",
     "axios": "^1.7.7",
     "moment": "^2.30.1",
     "npm": "^10.8.3",
@@ -50,5 +54,8 @@
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "ajv": "^7.2.4"
-  }
+  },
+  "resolutions": {
+  "@types/react": "18.0.0"
+}
 }
